@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taiwo Ajala & Co. | Cinematic Legal Experience</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="dark-theme">
+  <!-- Preloader Screen -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <div class="preloader-emblem">
+        <svg class="crest-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+          <path d="M50 15 V75 M30 35 H70 M30 35 L20 60 H40 Z M70 35 L60 60 H80 Z M35 78 H65" stroke="#d4af37" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h2 class="preloader-title">TAIWO AJALA & CO.</h2>
+      <p class="preloader-tagline">Loading Cinematic Scale of Justice Sequence</p>
+      
+      <div class="progress-bar-container">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+      <div class="progress-meta">
+        <span id="progressText" class="progress-percent">0%</span>
+        <span id="frameCounterText" class="frame-text">Caching frames 0 / 30</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Header Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo">
+        <span class="brand-crest">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2v20M5 7h14M5 7l-3 7h6zm14 0l-3 7h6zM7 21h10" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div class="brand-text">
+          <span class="brand-name">TAIWO AJALA & CO.</span>
+          <span class="brand-sub">SOLICITORS & ADVOCATES</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#scroll-experience" class="nav-link">360° Animation</a>
+        <a href="#philosophy" class="nav-link">Ethos</a>
+        <a href="#principal" class="nav-link">Senior Counsel</a>
+        <a href="#practices" class="nav-link">Practice Areas</a>
+        <a href="#clients" class="nav-link">Clients</a>
+        <a href="#contact" class="nav-cta-btn">Consult Counsel</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- FULL-BLEED HERO SCROLL ANIMATION SECTION -->
+  <section id="hero" class="hero-scroll-experience">
+    <div class="sticky-pin" id="stickyPin">
+      
+      <!-- Full-bleed Canvas Covering the Entire Hero Section -->
+      <canvas id="scaleCanvas" class="scale-canvas-fullbleed"></canvas>
+
+      <!-- Hero Story & Chapter Overlays (Scrollytelling within Hero) -->
+      <div class="hero-content-wrapper">
+        
+        <!-- INITIAL HERO SCREEN (0% - 16%) -->
+        <div class="story-card hero-main-card active" id="heroIntroCard" data-range="0,0.16">
+          <div class="hero-badge">
+            <span class="sparkle">✦</span> PREMIER COMMERCIAL & PROPERTY LAW FIRM <span class="sparkle">✦</span>
+          </div>
+          <h1 class="hero-main-heading">
+            The Sacred Balance of <br />
+            <span class="gold-gradient-text">Justice & Jurisprudence</span>
+          </h1>
+          <p class="hero-lead-text">
+            Distinguished solicitors and counsel to sovereign corporations, financial institutions, and statutory bodies across Nigeria.
+          </p>
+          <div class="hero-action-row">
+            <a href="#practices" class="btn-primary btn-sm">
+              <span>Explore Practice Areas</span>
+            </a>
+            <a href="#principal" class="btn-secondary btn-sm">
+              <span>Meet Senior Counsel</span>
+            </a>
+          </div>
+          <div class="scroll-down-hint">
+            <div class="mouse-icon">
+              <div class="wheel"></div>
+            </div>
+            <span>SCROLL TO ROTATE 360° SCALES</span>
+          </div>
+        </div>
+
+        <!-- CHAPTER 1: SACRED EMBLEM (18% - 38%) -->
+        <div class="story-card" id="chapter1" data-range="0.18,0.38">
+          <div class="chapter-badge">01 // SACRED EMBLEM</div>
+          <h2 class="chapter-heading">The Balance of Justice</h2>
+          <p class="chapter-desc">
+            In every commercial dispute and constitutional adjudication, 
+            justice demands an unwavering equilibrium between statutory precision and moral righteousness.
+          </p>
+          <div class="chapter-highlight">
+            <span class="highlight-number">30+</span>
+            <span class="highlight-label">Years of Uncompromising Legal Distinction</span>
+          </div>
+        </div>
+
+        <!-- CHAPTER 2: STRATEGIC RIGOR (40% - 60%) -->
+        <div class="story-card" id="chapter2" data-range="0.40,0.60">
+          <div class="chapter-badge">02 // STRATEGIC RIGOR</div>
+          <h2 class="chapter-heading">Equity, Corporate & Property Law</h2>
+          <p class="chapter-desc">
+            From multifaceted Corporate Insolvency and Receivership to high-value Credit & Securities Perfection, 
+            we safeguard institutional capital with formidable foresight.
+          </p>
+          <div class="chapter-highlight">
+            <span class="highlight-number">₦150B+</span>
+            <span class="highlight-label">Securities & Commercial Assets Structured</span>
+          </div>
+        </div>
+
+        <!-- CHAPTER 3: MARITIME & ENERGY (62% - 82%) -->
+        <div class="story-card" id="chapter3" data-range="0.62,0.82">
+          <div class="chapter-badge">03 // MARITIME & ENERGY</div>
+          <h2 class="chapter-heading">Admiralty, Oil & Capital Markets</h2>
+          <p class="chapter-desc">
+            Navigating vessel arrests, admiralty claims, petroleum licensing, and banking regulatory compliance 
+            with swift execution across Nigerian appellate and federal courts.
+          </p>
+          <div class="chapter-highlight">
+            <span class="highlight-number">100%</span>
+            <span class="highlight-label">Statutory Consents & Clearance Track Record</span>
+          </div>
+        </div>
+
+        <!-- CHAPTER 4: INSTITUTIONAL PILLARS (84% - 1.0) -->
+        <div class="story-card" id="chapter4" data-range="0.84,1.0">
+          <div class="chapter-badge">04 // INSTITUTIONAL PILLARS</div>
+          <h2 class="chapter-heading">Nigeria's Foremost Entities</h2>
+          <p class="chapter-desc">
+            Trusted retainers for the Nigerian Railway Corporation, FAAN, WAEC, GTBank, Stanbic IBTC, and UBA. 
+            When national stakes are highest, institutions call on Taiwo Ajala & Co.
+          </p>
+          <div class="chapter-cta">
+            <a href="#practices" class="btn-primary btn-sm">Explore All Practice Areas ↓</a>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- Vertical Page Scroll Track (Rightmost edge) -->
+      <div class="scroll-progress-indicator">
+        <div class="progress-track">
+          <div id="scrollPinProgress" class="progress-thumb"></div>
+        </div>
+        <span class="progress-fraction" id="scrollPercent">0%</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY SPOTLIGHT: The Advocate's Study -->
+  <section class="philosophy-section" id="philosophy">
+    <div class="container">
+      <div class="spotlight-card">
+        <div class="spotlight-media">
+          <img src="./images/justice-desk.png" alt="The Advocate's Law Desk" class="spotlight-img" loading="lazy" />
+          <div class="spotlight-media-overlay"></div>
+          <div class="spotlight-caption-tag">THE ADVOCATE'S SANCTUARY</div>
+        </div>
+        
+        <div class="spotlight-content">
+          <div class="section-tag">GUIDING CREED</div>
+          <h2 class="section-title">
+            "Justice is not about winning.<br />
+            <span class="gold-gradient-text">It's about doing what is right."</span>
+          </h2>
+          <p class="section-lead">
+            Law is not merely a profession; it is an enduring sacred calling. Founded on rigorous scholarship 
+            and ethical stewardship, our firm brings clarity to labyrinthine disputes and secures enduring peace of mind.
+          </p>
+
+          <div class="study-pillars">
+            <div class="pillar-item">
+              <span class="pillar-icon">⚖️</span>
+              <div class="pillar-text">
+                <h4>Constitutional & Evidential Rigor</h4>
+                <p>Every brief is grounded in deep jurisprudence, case precedents, and statutory authority.</p>
+              </div>
+            </div>
+            <div class="pillar-item">
+              <span class="pillar-icon">🏛️</span>
+              <div class="pillar-text">
+                <h4>Governmental Consents & Approvals</h4>
+                <p>Proactive resolution of statutory permissions, land titles, and ministerial clearances.</p>
+              </div>
+            </div>
+            <div class="pillar-item">
+              <span class="pillar-icon">🛡️</span>
+              <div class="pillar-text">
+                <h4>Fiduciary Integrity</h4>
+                <p>Uncompromising loyalty to clients, fortified by confidential handling of high-stakes matters.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPAL COUNSEL SECTION: Chief Taiwo Ajala -->
+  <section class="principal-section" id="principal">
+    <div class="container">
+      <div class="principal-grid">
+        <div class="principal-info">
+          <div class="section-tag">LEADERSHIP</div>
+          <h2 class="principal-name">Chief Taiwo Ajala</h2>
+          <h3 class="principal-title">Principal Partner & Senior Solicitor</h3>
+          
+          <p class="principal-bio">
+            Chief Taiwo Ajala is an eminent Nigerian legal practitioner of exceptional repute, with decades of 
+            mastery in corporate restructuring, civil litigation, debt recovery, and property conveyancing. 
+            Renowned for his razor-sharp legal acumen and calm, commanding presence in courtroom advocacy, 
+            Chief Ajala has steered landmark legal decisions and advised top-tier financial syndicates.
+          </p>
+
+          <blockquote class="principal-quote">
+            "The law is a shield for the righteous and an anchor for commerce. When properly wielded, 
+            it converts turbulence into order and guarantees the prosperity of future generations."
+          </blockquote>
+
+          <div class="credentials-row">
+            <div class="cred-badge">
+              <span class="cred-num">30+</span>
+              <span class="cred-desc">Years Bar Experience</span>
+            </div>
+            <div class="cred-badge">
+              <span class="cred-num">100+</span>
+              <span class="cred-desc">Institutional Briefs</span>
+            </div>
+            <div class="cred-badge">
+              <span class="cred-num">Top Tier</span>
+              <span class="cred-desc">Banking Counsel</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="principal-visual">
+          <div class="portrait-frame">
+            <img src="./images/chief-taiwo-ajala.png" alt="Chief Taiwo Ajala" class="portrait-img" loading="lazy" />
+            <div class="frame-border-glow"></div>
+            <div class="portrait-tag">
+              <span class="tag-title">Chief Taiwo Ajala</span>
+              <span class="tag-role">Managing Solicitor & Founder</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRACTICE AREAS SECTION -->
+  <section class="practices-section" id="practices">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">LEGAL EXPERTISE</div>
+        <h2 class="section-title">Specialized Areas of Practice</h2>
+        <p class="section-subtitle">
+          Comprehensive legal, regulatory, and litigation services tailored to corporate conglomerates and sovereign institutions.
+        </p>
+      </div>
+
+      <div class="practices-grid">
+        <!-- 1 -->
+        <div class="practice-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+          <h3 class="card-title">Commercial & Property Law</h3>
+          <p class="card-desc">
+            Title perfections, commercial lease syndications, land tenure advisory, conveyance, and resolving contentious land disputes across Nigeria.
+          </p>
+          <ul class="card-points">
+            <li>Title Investigation & Due Diligence</li>
+            <li>Governor's Consent & Land Registry Filing</li>
+            <li>High-Value Real Estate Development</li>
+          </ul>
+        </div>
+
+        <!-- 2 -->
+        <div class="practice-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <h3 class="card-title">Corporate Insolvency & Receivership</h3>
+          <p class="card-desc">
+            Protecting creditor interests, managing receivership assets, corporate turnarounds, debt workout negotiations, and liquidation procedures.
+          </p>
+          <ul class="card-points">
+            <li>Creditors' Rights Enforcement</li>
+            <li>Asset Recovery & Receivership Management</li>
+            <li>Restructuring & Solvent Liquidations</li>
+          </ul>
+        </div>
+
+        <!-- 3 -->
+        <div class="practice-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <h3 class="card-title">Banking & Securities Perfection</h3>
+          <p class="card-desc">
+            Formulating complex credit agreements, debentures, mortgages, and capital market compliance for Nigeria's leading commercial banks.
+          </p>
+          <ul class="card-points">
+            <li>Loan Documentation & Syndication</li>
+            <li>Collateral & Security Perfection</li>
+            <li>Regulatory Banking Compliance</li>
+          </ul>
+        </div>
+
+        <!-- 4 -->
+        <div class="practice-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M2 12h20M2 16h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <h3 class="card-title">Maritime & Admiralty Law</h3>
+          <p class="card-desc">
+            Advising shipowners, charterers, and port authorities on vessel arrests, carriage of goods by sea, cargo claims, and maritime insurance.
+          </p>
+          <ul class="card-points">
+            <li>Vessel Arrests & Release</li>
+            <li>Charterparty & Bill of Lading Disputes</li>
+            <li>Port Authority Regulatory Advisory</li>
+          </ul>
+        </div>
+
+        <!-- 5 -->
+        <div class="practice-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <h3 class="card-title">Civil Litigation & Debt Recovery</h3>
+          <p class="card-desc">
+            High-stakes trial and appellate representation, debt workouts, obtaining Mareva injunctions, and enforcement of judgments.
+          </p>
+          <ul class="card-points">
+            <li>Federal High Court & Court of Appeal</li>
+            <li>Commercial Debt Recovery Actions</li>
+            <li>Emergency Injunctive Relief</li>
+          </ul>
+        </div>
+
+        <!-- 6 -->
+        <div class="practice-card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 6v6l4 2"></path>
+            </svg>
+          </div>
+          <h3 class="card-title">Petroleum & Energy Law</h3>
+          <p class="card-desc">
+            Upstream, midstream, and downstream licensing, oilfield joint ventures, environmental compliance, and legal drafting for energy concessions.
+          </p>
+          <ul class="card-points">
+            <li>Petroleum Industry Act (PIA) Advisory</li>
+            <li>Joint Venture & Farm-in Agreements</li>
+            <li>Energy Concession Approvals</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTITUTIONAL CLIENTS SHOWCASE -->
+  <section class="clients-section" id="clients">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">ESTEEMED CLIENTELE</div>
+        <h2 class="section-title">Trusted by Nigeria's Foremost Institutions</h2>
+        <p class="section-subtitle">
+          We are proud to have acted and currently act in general legal practice, advisories, and dispute resolution for leading statutory and financial powerhouses:
+        </p>
+      </div>
+
+      <div class="clients-grid">
+        <div class="client-card">
+          <div class="client-type">PUBLIC INFRASTRUCTURE</div>
+          <h3 class="client-name">Nigerian Railway Corporation</h3>
+          <p class="client-meta">Statutory transportation authority of the Federal Republic of Nigeria.</p>
+        </div>
+
+        <div class="client-card">
+          <div class="client-type">AVIATION & AEROSPACE</div>
+          <h3 class="client-name">Federal Airport Authority of Nigeria (FAAN)</h3>
+          <p class="client-meta">Custodian of all federal airports and civil aviation facilities.</p>
+        </div>
+
+        <div class="client-card">
+          <div class="client-type">REGIONAL EXAMINATION BODY</div>
+          <h3 class="client-name">West African Examinations Council (WAEC)</h3>
+          <p class="client-meta">Premier West African sub-regional educational testing council.</p>
+        </div>
+
+        <div class="client-card">
+          <div class="client-type">NATIONAL HEALTHCARE</div>
+          <h3 class="client-name">National Orthopaedic Hospital, Igbobi, Lagos</h3>
+          <p class="client-meta">Apex specialist orthopedic teaching and medical institution in Nigeria.</p>
+        </div>
+
+        <div class="client-card">
+          <div class="client-type">TIER-1 FINANCIAL INSTITUTION</div>
+          <h3 class="client-name">Guaranty Trust Bank Plc</h3>
+          <p class="client-meta">Leading multinational commercial banking conglomerate.</p>
+        </div>
+
+        <div class="client-card">
+          <div class="client-type">TIER-1 FINANCIAL INSTITUTION</div>
+          <h3 class="client-name">Stanbic IBTC Bank Plc</h3>
+          <p class="client-meta">Member of Standard Bank Group, end-to-end financial powerhouse.</p>
+        </div>
+
+        <div class="client-card">
+          <div class="client-type">PAN-AFRICAN BANKING</div>
+          <h3 class="client-name">United Bank for Africa (UBA) Plc</h3>
+          <p class="client-meta">Premier multinational banking firm with operations across 20 African nations.</p>
+        </div>
+
+        <div class="client-card">
+          <div class="client-type">COMMERCIAL BANKING</div>
+          <h3 class="client-name">Wema Bank Nigeria Plc</h3>
+          <p class="client-meta">Pioneering commercial bank and fintech innovator.</p>
+        </div>
+
+        <div class="client-card">
+          <div class="client-type">INVESTMENT BANKING</div>
+          <h3 class="client-name">Greenwich Merchant Bank Limited</h3>
+          <p class="client-meta">Elite investment banking and asset management group.</p>
+        </div>
+
+        <div class="client-card">
+          <div class="client-type">MANUFACTURING & INDUSTRIAL</div>
+          <h3 class="client-name">Funman Nig Plc</h3>
+          <p class="client-meta">Renowned consumer goods and FMCG conglomerate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECEPTION SHOWCASE BANNER -->
+  <section class="banner-section">
+    <div class="banner-wrapper">
+      <img src="./images/firm-reception.png" alt="Taiwo Ajala & Co Chambers Reception" class="banner-img" loading="lazy" />
+      <div class="banner-gradient"></div>
+      <div class="container banner-content">
+        <span class="banner-tag">CHAMBERS HEADQUARTERS</span>
+        <h2 class="banner-heading">An Environment of Unwavering Diligence</h2>
+        <p class="banner-desc">
+          Step into chambers engineered for deep scholarship, rigorous confidentiality, and tactical resolution.
+        </p>
+        <a href="#contact" class="btn-primary">Schedule Private Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE CONSULTATION & CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <div class="section-tag">GET IN TOUCH</div>
+          <h2 class="section-title">Retain Senior Counsel</h2>
+          <p class="section-lead">
+            We are prepared to indicate our willingness to render legal services to your institution. 
+            Submit a brief inquiry and our partners will review your matter confidentially.
+          </p>
+
+          <div class="contact-details">
+            <div class="detail-item">
+              <span class="detail-icon">📍</span>
+              <div>
+                <strong>Chambers Address</strong>
+                <p>Taiwo Ajala & Co. Chambers, Victoria Island / Lagos Mainland, Lagos State, Nigeria</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">⚖️</span>
+              <div>
+                <strong>Scope of Services</strong>
+                <p>Corporate Law, Property, Banking, Maritime, Receivership & Civil Litigation</p>
+              </div>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">✉️</span>
+              <div>
+                <strong>Direct Correspondence</strong>
+                <p>counsel@taiwoajala.com • info@taiwoajala.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-container">
+          <form id="consultationForm" class="consultation-form">
+            <h3 class="form-title">Consultation Request</h3>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name / Representative *</label>
+                <input type="text" id="fullName" required placeholder="e.g. Dr. Babatunde Williams" />
+              </div>
+              <div class="form-group">
+                <label for="institution">Institution / Organization *</label>
+                <input type="text" id="institution" required placeholder="e.g. Standard Holdings Ltd" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Institutional Email *</label>
+                <input type="email" id="email" required placeholder="name@organization.com" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Telephone Number *</label>
+                <input type="tel" id="phone" required placeholder="+234 800 000 0000" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="practiceArea">Matter Classification *</label>
+              <select id="practiceArea" required>
+                <option value="" disabled selected>Select Primary Legal Area</option>
+                <option value="corporate">Corporate Insolvency & Receivership</option>
+                <option value="property">Commercial Property & Conveyancing</option>
+                <option value="banking">Banking, Securities & Capital Markets</option>
+                <option value="maritime">Maritime & Admiralty Law</option>
+                <option value="litigation">Civil Litigation & High-Value Debt Recovery</option>
+                <option value="petroleum">Petroleum & Energy Regulatory Advisory</option>
+                <option value="consents">Governmental Consents & Approvals</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="briefMessage">Brief Summary of the Matter *</label>
+              <textarea id="briefMessage" rows="4" required placeholder="Please outline the nature of your institution's inquiry..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary btn-block">
+              <span>Submit Confidential Brief</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+
+            <div id="formSuccessMessage" class="form-success-banner hidden">
+              ✓ Thank you. Your inquiry has been transmitted to Taiwo Ajala & Co. Senior Counsel. A formal response will be issued within one business day.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="brand-crest small">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2v20M5 7h14M5 7l-3 7h6zm14 0l-3 7h6zM7 21h10" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="footer-firm-name">TAIWO AJALA & CO.</span>
+        <p class="footer-tagline">Solicitors & Barristers • Commercial & Property Law Specialists</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#hero">Overview</a>
+        <a href="#scroll-experience">360° Animation</a>
+        <a href="#principal">Chief Taiwo Ajala</a>
+        <a href="#practices">Practices</a>
+        <a href="#clients">Clients</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Taiwo Ajala & Company. All rights reserved. Registered Legal Practitioners, Nigeria.</p>
+        <button id="backToTopBtn" class="back-to-top">
+          ↑ Back to Top
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
