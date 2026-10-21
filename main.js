@@ -1,6 +1,7 @@
 /**
  * TAIWO AJALA & CO. - 360° CINEMATIC SCROLL ANIMATION ENGINE
- * High-performance full-bleed canvas sequence rendering with interpolation and scrollytelling.
+ * High-performance full-bleed canvas sequence rendering with interpolation,
+ * mobile responsive handling, and scrollytelling.
  */
 
 // Total frame count in the sequence
@@ -31,6 +32,9 @@ const storyCards = document.querySelectorAll('.story-card');
 // Navigation & Navbar
 const navbar = document.getElementById('navbar');
 const backToTopBtn = document.getElementById('backToTopBtn');
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta');
 
 // Consultation Form
 const consultationForm = document.getElementById('consultationForm');
@@ -82,25 +86,36 @@ function onAllFramesLoaded() {
     if (preloader) preloader.classList.add('fade-out');
     resizeCanvas();
     renderFrame(0);
-  }, 400);
+    updateScrollProgress();
+  }, 350);
 }
 
 /**
- * 2. CANVAS RESIZE & HI-DPI SETUP
+ * 2. CANVAS RESIZE & HI-DPI SETUP (MOBILE-OPTIMIZED)
+ * Caps devicePixelRatio to max 2 to ensure 60-120fps performance on high-density mobile screens
  */
 function resizeCanvas() {
   if (!canvas) return;
-  const dpr = window.devicePixelRatio || 1;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
   const rect = canvas.getBoundingClientRect();
   
-  canvas.width = rect.width * dpr;
-  canvas.height = rect.height * dpr;
+  canvas.width = Math.round(rect.width * dpr);
+  canvas.height = Math.round(rect.height * dpr);
   ctx.scale(dpr, dpr);
 }
 
 window.addEventListener('resize', () => {
   resizeCanvas();
   renderFrame(Math.min(TOTAL_FRAMES - 1, Math.floor(currentProgress * TOTAL_FRAMES)));
+  updateScrollProgress();
+}, { passive: true });
+
+window.addEventListener('orientationchange', () => {
+  setTimeout(() => {
+    resizeCanvas();
+    renderFrame(Math.min(TOTAL_FRAMES - 1, Math.floor(currentProgress * TOTAL_FRAMES)));
+    updateScrollProgress();
+  }, 200);
 });
 
 /**
@@ -144,12 +159,14 @@ function renderFrame(frameIndex) {
 
 /**
  * 4. SCROLL LISTENER & PROGRESS TRACKING
+ * Robust height calculation respecting dynamic mobile viewport bars
  */
 function updateScrollProgress() {
   if (!scrollSection) return;
 
   const rect = scrollSection.getBoundingClientRect();
-  const totalHeight = rect.height - window.innerHeight;
+  const vh = window.innerHeight || document.documentElement.clientHeight;
+  const totalHeight = rect.height - vh;
 
   if (totalHeight <= 0) return;
 
@@ -159,9 +176,12 @@ function updateScrollProgress() {
 
   targetProgress = clamped;
 
-  // Update vertical scroll thumb indicator
+  // Update vertical / mobile horizontal scroll thumb indicator
   const pctString = Math.round(clamped * 100) + '%';
-  if (scrollPinProgress) scrollPinProgress.style.height = pctString;
+  if (scrollPinProgress) {
+    scrollPinProgress.style.height = pctString;
+    scrollPinProgress.style.width = pctString;
+  }
   if (scrollPercent) scrollPercent.textContent = pctString;
 
   // Update Scrollytelling Chapters
@@ -173,7 +193,7 @@ window.addEventListener('scroll', () => {
 
   // Sticky Navbar background blur trigger
   if (navbar) {
-    if (window.scrollY > 60) {
+    if (window.scrollY > 40) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
@@ -217,7 +237,34 @@ function animationLoop() {
 requestAnimationFrame(animationLoop);
 
 /**
- * 7. BACK TO TOP
+ * 7. MOBILE NAVIGATION DRAWER TOGGLE
+ */
+if (mobileMenuToggle && mobileNavDrawer) {
+  mobileMenuToggle.addEventListener('click', () => {
+    const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+    const nextState = !isExpanded;
+
+    mobileMenuToggle.setAttribute('aria-expanded', String(nextState));
+    mobileMenuToggle.classList.toggle('active', nextState);
+    mobileNavDrawer.classList.toggle('active', nextState);
+    mobileNavDrawer.setAttribute('aria-hidden', String(!nextState));
+    document.body.classList.toggle('mobile-menu-open', nextState);
+  });
+
+  // Close drawer and navigate when any link is clicked
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenuToggle.setAttribute('aria-expanded', 'false');
+      mobileMenuToggle.classList.remove('active');
+      mobileNavDrawer.classList.remove('active');
+      mobileNavDrawer.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('mobile-menu-open');
+    });
+  });
+}
+
+/**
+ * 8. BACK TO TOP
  */
 if (backToTopBtn) {
   backToTopBtn.addEventListener('click', () => {
@@ -226,7 +273,7 @@ if (backToTopBtn) {
 }
 
 /**
- * 8. CONSULTATION FORM SUBMISSION
+ * 9. CONSULTATION FORM SUBMISSION
  */
 if (consultationForm) {
   consultationForm.addEventListener('submit', (e) => {
